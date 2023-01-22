@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar sucursal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a class="nav-link" href="/sucursal/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/sucursal/add">Añadir sucursal</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/sucursal/update">Actualizar
+            sucursal</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/sucursal/delete">Borrar
+            sucursal</a></li>
+        <li class="nav-item"><a class="nav-link" href="/sucursal/getAll">Mostrar sucursales</a></li>
+    </ul>
+</header>
+<div class="d-flex align-items-center justify-content-center">
+    <form class="card" style="width: 25rem;" action="#" th:action="@{/sucursal/updateBranch}" th:object="${branch}"
+          method="post">
+        <fieldset class="card-body">
+            <div class="mb-3">
+                <label for="branchName" class="form-label">Nombre</label>
+                <input id="branchName" class="form-control" th:field="*{branchName}"/>
+            </div>
+            <div class="mb-3">
+                <label for="branchCountry" class="form-label">País</label>
+                <input id="branchCountry" class="form-control" th:field="*{branchCountry}"/>
+            </div>
+            <input type="submit" id="submitButton" th:value="Save">
+            <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
